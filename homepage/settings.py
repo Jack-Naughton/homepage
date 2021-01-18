@@ -25,12 +25,13 @@ SECRET_KEY = 'v7&m7ocvx(3o_qxv9zx$t=q!8($11vb=$e+@md-0#s_))fk8z0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'resume.apps.ResumeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
