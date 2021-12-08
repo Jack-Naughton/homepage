@@ -40,6 +40,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 INSTALLED_APPS = [
     'resume.apps.ResumeConfig',
     'horsefacts.apps.HorsefactsConfig',
+    'lauren_coworker_bot.apps.LaurenCoworkerBotConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

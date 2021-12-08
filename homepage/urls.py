@@ -20,5 +20,6 @@ urlpatterns = [
     path('', include('resume.urls')),
     path('resume/', include('resume.urls')),
     path('horsefacts/', include('horsefacts.urls')),
+    path('coworker_statements/', include('lauren_coworker_bot.urls')),
     path('admin/', admin.site.urls),
 ]
