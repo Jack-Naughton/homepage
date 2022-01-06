@@ -21,5 +21,6 @@ urlpatterns = [
     path('resume/', include('resume.urls')),
     path('horsefacts/', include('horsefacts.urls')),
     path('coworker_statements/', include('lauren_coworker_bot.urls')),
+    path('stolen_wordle/', include('stolen_wordle.urls')),
     path('admin/', admin.site.urls),
 ]

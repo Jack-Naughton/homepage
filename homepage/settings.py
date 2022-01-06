@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'resume.apps.ResumeConfig',
     'horsefacts.apps.HorsefactsConfig',
     'lauren_coworker_bot.apps.LaurenCoworkerBotConfig',
+    'stolen_wordle.apps.StolenWordleConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
