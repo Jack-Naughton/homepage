@@ -1,7 +1,7 @@
 this.wordle = this.wordle || {},
 this.wordle.bundle = function(e) {
     "use strict";
-    window.localStorage.clear();
+    window.localStorage.removeItem('gameState');
     function a(e) {
         return (a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
             return typeof e
@@ -1190,8 +1190,7 @@ this.wordle.bundle = function(e) {
           , s = e.isStreak
           , t = e.numGuesses
           , o = Ua();
-        a ? (o.guesses[t] += 1,
-        s ? o.currentStreak += 1 : o.currentStreak = 1) : (o.currentStreak = 0,
+        a ? (o.guesses[t] += 1, o.currentStreak += 1) : (o.currentStreak = 0,
         o.guesses.fail += 1),
         o.maxStreak = Math.max(o.currentStreak, o.maxStreak),
         o.gamesPlayed += 1,
@@ -1203,10 +1202,8 @@ this.wordle.bundle = function(e) {
               , o = s[1];
             return t !== Ya ? e += t * o : e
         }
-        ), 0) / o.gamesWon),
-        function(e) {
-            window.localStorage.setItem(Wa, JSON.stringify(e))
-        }(o)
+        ), 0) / o.gamesWon * 100) / 100;
+        window.localStorage.setItem(Wa, JSON.stringify(o))
     }
     var Ka = document.createElement("template");
     Ka.innerHTML = "\n  <style>\n  .toaster {\n    position: absolute;\n    top: 10%;\n    left: 50%;\n    transform: translate(-50%, 0);\n    pointer-events: none;\n    width: fit-content;\n  }\n  #game-toaster {\n    z-index: ".concat(1e3, ";\n  }\n  #system-toaster {\n    z-index: ").concat(4e3, ';\n  }\n\n  #game {\n    width: 100%;\n    max-width: var(--game-max-width);\n    margin: 0 auto;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n  }\n  header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    height: var(--header-height);\n    color: var(--color-tone-1);\n    border-bottom: 1px solid var(--color-tone-4);\n  }\n  header .title {\n    font-weight: 700;\n    font-size: 36px;\n    letter-spacing: 0.2rem;\n    text-transform: uppercase;\n    text-align: center;\n  }\n\n  #board-container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-grow: 1;\n    overflow: hidden;\n  }\n  #board {\n    display: grid;\n    grid-template-rows: repeat(6, 1fr);\n    grid-gap: 5px;\n    padding:10px;\n    box-sizing: border-box;\n  }\n  button.icon {\n    background: none;\n    border: none;\n    cursor: pointer;\n  }\n  #debug-tools {\n    position: absolute;\n    bottom: 0;\n  }\n\n  </style>\n  <game-theme-manager>\n    <div id="game">\n      <header>\n        <div class="menu">\n          <button id="help" class="icon">\n            <game-icon icon="help"></game-icon>\n          </button>\n        </div>\n        <div class="title">\n         WORDLE\n        </div>\n        <div class="menu">\n          <button id="settings" class="icon">\n            <game-icon icon="settings"></game-icon>\n          </button>\n        </div>\n      </header>\n        <div id="board-container">\n          <div id="board"></div>\n        </div>\n        <game-keyboard></game-keyboard>\n        <game-modal></game-modal>\n        <game-page></game-page>\n        <div class="toaster" id="game-toaster"></div>\n        <div class="toaster" id="system-toaster"></div>\n    </div>\n  </game-theme-manager>\n  <div id="debug-tools"></div>\n');
@@ -1243,10 +1240,12 @@ this.wordle.bundle = function(e) {
             }),
             e.today = new Date;
             var o = za();
+            var solutionBabbyyyy = Pa(e.today);
+
             return e.lastPlayedTs = o.lastPlayedTs,
             !e.lastPlayedTs || $a(new Date(e.lastPlayedTs), e.today) >= 1 ? (e.boardState = new Array(6).fill(""),
             e.evaluations = new Array(6).fill(null),
-            e.solution = Pa(e.today),
+            e.solution = solutionBabbyyyy,
             e.dayOffset = Na(e.today),
             e.lastCompletedTs = o.lastCompletedTs,
             e.hardMode = o.hardMode,
@@ -1755,7 +1754,7 @@ this.wordle.bundle = function(e) {
                     }
                     s.appendChild(i)
                 }
-                ["gamesPlayed", "winPercentage", "currentStreak", "maxStreak"].forEach((function(s) {
+                ["gamesPlayed", "winPercentage", "currentStreak", "maxStreak", "averageGuesses"].forEach((function(s) {
                     var t = hs[s]
                       , o = e.stats[s]
                       , r = ps.content.cloneNode(!0);
@@ -1998,7 +1997,7 @@ this.wordle.bundle = function(e) {
                   , t = Math.floor(a % qs / _s)
                   , o = Math.floor(a % _s / 1e3)
                   , r = "".concat(this.padDigit(s), ":").concat(this.padDigit(t), ":").concat(this.padDigit(o));
-                this.$timer.textContent = r
+                this.$timer.textContent = 'Jack wuz here'
             }
         }, {
             key: "connectedCallback",
