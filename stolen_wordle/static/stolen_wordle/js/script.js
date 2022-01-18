@@ -1,7 +1,11 @@
 this.wordle = this.wordle || {},
 this.wordle.bundle = function(e) {
     "use strict";
+
+    // remember hardMode setting before wiping gameState
+    let globalHardMode = JSON.parse(window.localStorage.getItem('gameState')).hardMode || false;
     window.localStorage.removeItem('gameState');
+
     function a(e) {
         return (a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
             return typeof e
@@ -1004,7 +1008,7 @@ this.wordle.bundle = function(e) {
         lastPlayedTs: null,
         lastCompletedTs: null,
         restoringFromLocalStorage: null,
-        hardMode: !1
+        hardMode: globalHardMode
     };
     function za() {
         var e = window.localStorage.getItem(wa) || JSON.stringify(xa);
