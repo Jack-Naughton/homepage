@@ -3112,14 +3112,17 @@ var app = function() {
           , u = L();
         function c(e) {
             "skipped" == e ? (u("guess", {
-                guess: r,
-                isSkipped: !0
-            }),
-            n(4, r = "")) : void 0 !== r && "" !== r.trim() ? (u("guess", {
-                guess: r,
-                isSkipped: !1
-            }),
-            n(4, r = "")) : l.focus()
+                    guess: r,
+                    isSkipped: !0
+                }),
+                n(4, r = ""))
+            : void 0 !== r && "" !== r.trim() ?
+                (u("guess", {
+                    guess: r,
+                    isSkipped: !1
+                }),
+                n(4, r = ""))
+                : l.focus()
         }
         P((()=>{
             !function() {
@@ -4011,7 +4014,7 @@ var app = function() {
         let t, n, r, s = e[0].length * e[1].attemptInterval / 1e3 + "";
         return {
             c() {
-                t = _("You got today's Heardle within the first "),
+                t = _("You got this Heardle within the first "),
                 n = _(s),
                 r = _(" seconds.")
             },
@@ -4034,7 +4037,7 @@ var app = function() {
         let t, n, r, s, i, o = e[1].attemptIntervalAlt[e[0].length - 1] / 1e3 + "", a = e[1].attemptIntervalAlt[e[0].length - 1] / 1e3 > 1 ? "s" : "";
         return {
             c() {
-                t = _("You got today's Heardle within "),
+                t = _("You got this Heardle within "),
                 n = _(o),
                 r = _("\n                second"),
                 s = _(a),
@@ -7927,9 +7930,7 @@ var app = function() {
                 Ln.title = "Heardle - That daily musical intros game",
                 M(t, "name", "description"),
                 M(t, "content", "Guess the song from the intro in as few tries as possible"),
-                M(n, "rel", "apple-touch-icon"),
                 M(n, "sizes", "180x180"),
-                M(n, "href", "/apple-touch-icon.png"),
                 M(s, "rel", "icon"),
                 M(s, "type", "image/png"),
                 M(s, "sizes", "32x32"),
@@ -8086,8 +8087,9 @@ var app = function() {
             p()
         }
         ));
-        null == localStorage.getItem("userStats") ? (h = [],
-        localStorage.setItem("userStats", JSON.stringify(h))) : h = JSON.parse(localStorage.getItem("userStats")),
+        null == localStorage.getItem("userStats") ?
+            (h = [], localStorage.setItem("userStats", JSON.stringify(h)))
+            : h = JSON.parse(localStorage.getItem("userStats")),
         f = h.find((e=>e.id === l.id)),
         void 0 === f && (f = l,
         h.push(f),
@@ -8111,7 +8113,7 @@ var app = function() {
             n(10, k.hasFrame = r, k)
         }
         function chooseRandomSong(e) {
-            return Math.floor(Math.random() * (e.length + 1));
+            return Math.floor(Math.random() * e.length);
             // removed date-based choosing
 //            var t = Yn(e, "YYYY-MM-DD");
 //            return Yn().diff(t, "days")
@@ -8234,6 +8236,24 @@ var app = function() {
     }
     return new class extends se {
         constructor(e) {
+
+            // Completely wipe the userStats. As of now, this means statistics can't be calculated,
+            // but this is also used to prevent a user from playing the same song twice.
+            let userStats = JSON.parse(localStorage.getItem('userStats'));
+            if(userStats) {
+                userStats = userStats.map(function(s) {
+                    return {
+                        correctAnswer : s.correctAnswer,
+                        hasFinished : false,
+                        hasStarted : false,
+                        guessList : [],
+                        url : s.url,
+                        id : s.id,
+                    }
+                })
+                localStorage.setItem('userStats', JSON.stringify(userStats));
+            }
+
             super(),
             re(this, e, jn, En, i, {}, null, [-1, -1])
         }
