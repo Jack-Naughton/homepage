@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'horsefacts.apps.HorsefactsConfig',
     'lauren_coworker_bot.apps.LaurenCoworkerBotConfig',
     'stolen_wordle.apps.StolenWordleConfig',
+    'stolen_herdle.apps.StolenHerdleConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

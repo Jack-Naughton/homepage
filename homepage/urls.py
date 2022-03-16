@@ -22,5 +22,6 @@ urlpatterns = [
     path('horsefacts/', include('horsefacts.urls')),
     path('coworker_statements/', include('lauren_coworker_bot.urls')),
     path('stolen_word_game/', include('stolen_wordle.urls')),
+    path('stolen_song_game/', include('stolen_herdle.urls')),
     path('admin/', admin.site.urls),
 ]
