@@ -7581,11 +7581,32 @@ var app = function() {
             url: "https://soundcloud.com/daftpunkofficialmusic/harder-better-faster",
             answer: "Daft Punk - Harder, Better, Faster, Stronger"
         }, {
-            url: "https://soundcloud.com/otisredding/otis-redding-stories-raphael-saddiq-on-sittin-on-the-dock-of-the-bay",
-            answer: "Otis Redding - (Sitting On) The Dock Of the Bay"
+            url: "https://soundcloud.com/al-green-official/lets-stay-together-5",
+            answer: "Al Green - Let's Stay Together"
         }, {
             url: "https://soundcloud.com/atlanticrecords/locked-out-of-heaven",
             answer: "Bruno Mars - Locked Out of Heaven"
+        }, {
+            url: "https://soundcloud.com/wizkid-official/track-11",
+            answer: "Wizkid - Essence (feat. Tems)"
+        }, {
+            url: "https://soundcloud.com/destinys-child-official/independent-women-pt-i-3",
+            answer: "Destiny's Child - Independent Women, Pt. 1"
+        }, {
+            url: "https://soundcloud.com/thekidlaroi/stay",
+            answer: "The Kid LAROI. - Stay (feat. Justin Bieber)"
+        }, {
+            url: "https://soundcloud.com/linkin_park/numb",
+            answer: "Linkin Park - Numb"
+        }, {
+            url: "https://soundcloud.com/markronson/valerie-version-revisited",
+            answer: "Mark Ronson - Valerie (feat. Amy Winehouse)"
+        }, {
+            url: "https://soundcloud.com/dj-jazzy-jeff-the-fresh-prince/summertime-single-edit-1",
+            answer: "DJ Jazzy Jeff & The Fresh Prince - Summertime"
+        }, {
+            url: "https://soundcloud.com/dollyparton/jolene-11",
+            answer: "Dolly Parton - Jolene"
         }], Pn).subscribe
     };
     var Pn;
