@@ -3,7 +3,9 @@ this.wordle.bundle = function(e) {
     "use strict";
 
     // remember hardMode setting before wiping gameState
-    let globalHardMode = JSON.parse(window.localStorage.getItem('gameState')).hardMode || false;
+    let globalHardMode = JSON.parse(window.localStorage.getItem('gameState')) ?
+        JSON.parse(window.localStorage.getItem('gameState')).hardMode || false
+        : false;
     window.localStorage.removeItem('gameState');
 
     function a(e) {
