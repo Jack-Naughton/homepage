@@ -15,13 +15,12 @@ from pathlib import Path
 # https://pypi.org/project/python-dotenv/
 import os
 from dotenv import load_dotenv
+
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -33,7 +32,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
-
 
 # Application definition
 
@@ -81,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'homepage.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -99,7 +96,6 @@ DATABASES = {
         "PORT": os.getenv("SQL_PORT"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -119,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -133,12 +128,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static/") if os.getenv('ENV') == 'local' else '/home/dh_hnppbi/jacknaughton.com/public/static'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/") if os.getenv('ENV') == 'local' else '/home/dh_hnppbi/jacknaughton.com/public/media'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/") if os.getenv(
+    'ENV') == 'local' else '/home/dh_hnppbi/jacknaughton.com/public/static'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/") if os.getenv(
+    'ENV') == 'local' else '/home/dh_hnppbi/jacknaughton.com/public/media'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
