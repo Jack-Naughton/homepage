@@ -1,9 +1,10 @@
 appdirs==1.4.4
-asgiref==3.3.1
+asgiref==3.5.0
 distlib==0.3.1
-Django==3.1.4
+Django==4.0.3
 filelock==3.0.12
 mysql-connector-python==8.0.26
+protobuf==3.19.4
 python-dotenv==0.19.2
 pytz==2020.4
 six==1.15.0
