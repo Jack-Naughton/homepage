@@ -24,9 +24,9 @@ urlpatterns = [
     path('coworker_statements/', include('lauren_coworker_bot.urls')),
     path('stolen_word_game/', include('stolen_wordle.urls')),
     path('stolen_song_game/', include('stolen_herdle.urls')),
+    path('accounts/', include('accounts.urls')),
 
     # django urls
-    path('accounts/signup', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
