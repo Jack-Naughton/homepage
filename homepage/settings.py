@@ -65,6 +65,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            # base templates: headers, titles, etc
+            os.path.join('templates'),
+
+            # django account views/forms
             os.path.join('accounts/templates'),
         ],
         # 'DIRS': ['templates'],
