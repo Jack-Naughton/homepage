@@ -26,6 +26,7 @@ urlpatterns = [
     path('stolen_song_game/', include('stolen_herdle.urls')),
 
     # django urls
+    path('accounts/signup', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]

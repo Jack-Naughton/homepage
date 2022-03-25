@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'lauren_coworker_bot.apps.LaurenCoworkerBotConfig',
     'stolen_wordle.apps.StolenWordleConfig',
     'stolen_herdle.apps.StolenHerdleConfig',
+    'accounts',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
