@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
+{% load crispy_forms_filters %}
 
 {% block title %}Login{% endblock title %}
 
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-
-    <!-- form variable -->
-    {{ form.as_p }}
-
-    <input type="submit" name="sumbit">
-</form>
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+            <h3 class="mb-4">Sign in</h3>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" name="sumbit" class="btn btn-primary">
+            </form>
+            <br>
+            <p>Need an account? <a href="/accounts/signup">Click Here</a></p>
+        </div>
+    </div>
 {% endblock content %}
