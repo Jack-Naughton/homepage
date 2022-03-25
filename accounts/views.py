@@ -11,7 +11,7 @@ class SignupView(CreateView):
     success_url = 'profile'
 
 
-@method_decorator(login_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
 class ProfileView(DetailView):
     template_name = 'accounts/profile.html'
 

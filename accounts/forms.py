@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class SignupForm(UserCreationForm):
     email = forms.EmailField(
-        help_text='Needed for password reset.'
+        help_text='Needed for password reset. Or just make one up ¯\_(ツ)_/¯'
     )
 
     class Meta:
