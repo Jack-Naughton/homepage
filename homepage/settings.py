@@ -36,13 +36,18 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 # Application definition
 
 INSTALLED_APPS = [
+    # my apps
     'resume.apps.ResumeConfig',
     'horsefacts.apps.HorsefactsConfig',
     'lauren_coworker_bot.apps.LaurenCoworkerBotConfig',
     'stolen_wordle.apps.StolenWordleConfig',
     'stolen_herdle.apps.StolenHerdleConfig',
-    'accounts',
+    'accounts.apps.AccountsConfig',
 
+    # 3rd party apps
+    # 'crispy_forms',
+
+    # django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -66,14 +71,7 @@ ROOT_URLCONF = 'homepage.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            # base templates: headers, titles, etc
-            os.path.join('templates'),
-
-            # django account views/forms
-            os.path.join('accounts/templates'),
-        ],
-        # 'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -149,3 +147,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/") if os.getenv(
     'ENV') == 'local' else '/home/dh_hnppbi/jacknaughton.com/public/media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# form styling
+CRISPY_TEMPLATE_PACK="bootstrap4"
