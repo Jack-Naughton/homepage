@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
 
     # 3rd party apps
-    # 'crispy_forms',
+    'crispy_forms',
 
     # django apps
     'django.contrib.admin',
@@ -149,4 +149,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/") if os.getenv(
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # form styling
-CRISPY_TEMPLATE_PACK="bootstrap4"
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
