@@ -17,11 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # my urls
     path('', include('resume.urls')),
     path('resume/', include('resume.urls')),
     path('horsefacts/', include('horsefacts.urls')),
     path('coworker_statements/', include('lauren_coworker_bot.urls')),
     path('stolen_word_game/', include('stolen_wordle.urls')),
     path('stolen_song_game/', include('stolen_herdle.urls')),
+
+    # django urls
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
