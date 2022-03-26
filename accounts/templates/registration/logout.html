@@ -1,1 +1,15 @@
-bye
+{% extends 'base.html' %}
+{% block title %}Get outta here{% endblock title %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <h1>Goodbye</h1>
+    </div>
+    <script>
+        setTimeout(function () {
+            window.location.href = 'https://www.zombo.com/';
+        }, 5000);
+    </script>
+{% endblock content %}
