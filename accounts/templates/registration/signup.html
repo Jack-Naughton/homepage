@@ -5,9 +5,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" name="sumbit">
-</form>
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+            <h3 class="mb-4">Sign up</h3>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" name="sumbit" class="btn btn-primary">
+            </form>
+            <br>
+            <p>Have an account? <a href="/accounts/login">Click Here</a></p>
+        </div>
+    </div>
 {% endblock content %}
