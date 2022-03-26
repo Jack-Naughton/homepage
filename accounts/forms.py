@@ -10,6 +10,12 @@ class SignupForm(UserCreationForm):
         required=False
     )
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].help_text = 'No too-fancy characters'
+        self.fields['password1'].help_text = 'Min length 8'
+        self.fields['password2'].help_text = None
+
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
