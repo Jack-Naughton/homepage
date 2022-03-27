@@ -1,9 +1,10 @@
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.models import User
 from django.contrib.auth.views import LogoutView, LoginView
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import DetailView, CreateView
+from django.views.generic import DetailView, CreateView, UpdateView
 
 from accounts.forms import SignupForm, MyAuthenticationForm
 
@@ -31,7 +32,15 @@ class ProfileView(DetailView):
     template_name = 'accounts/profile.html'
 
     def get_object(self, **kwargs):
-        return self.request.user
+        return []
+
+
+@method_decorator(login_required, name='dispatch')
+class ProfileEditView(UpdateView):
+    model = User
+    fields = ['username', 'email']
+    template_name = 'accounts/update.html'
+    success_url = reverse_lazy('profile')
 
 
 class MyLoginView(LoginView):

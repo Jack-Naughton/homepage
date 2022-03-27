@@ -5,14 +5,14 @@
 </div>
 
 <a id="nav-toggle" class="inline-block py-2 px-4 text-white no-underline" href="#">
-    {{ user.username }}
+    {{ user.get_username }}
 </a>
 
 <div class="w-full flex-grow flex items-center hidden pt-6" id="nav-content">
     <ul class="list-reset flex justify-end flex-1 items-center py-2">
         <li class="mr-3">
             <a class="inline-block text-gray-50 no-underline hover:text-gray-500 hover:text-underline px-4"
-               href="#">Account</a>
+               href="{% url 'profile_edit' user.id %}">Account</a>
         </li>
         <li class="mr-3">
             <a class="inline-block text-gray-50 no-underline hover:text-gray-500 hover:text-underline px-4"
