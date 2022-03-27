@@ -152,9 +152,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/") if os.getenv(
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/") if os.getenv(
     'ENV') == 'local' else '/home/dh_hnppbi/jacknaughton.com/public/media'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'bootstrap'),
-]
+STATICFILES_DIRS = []
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
