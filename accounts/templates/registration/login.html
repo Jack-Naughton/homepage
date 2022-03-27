@@ -3,18 +3,22 @@
 {% block title %}Login{% endblock title %}
 
 {% block content %}
-    <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-8 col-xl-6">
-            <h3 class="mb-4">Sign in</h3>
+    <section class="flex items-center justify-center h-screen">
+        <div class="">
+            <h3 class="">Sign in</h3>
             <form method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <input type="submit" name="sumbit" class="btn btn-primary">
+                <input
+                        type="submit"
+                        name="sumbit"
+                        class="px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm"
+                >
             </form>
             <br>
             <p>Need an account? <a href="/accounts/signup">Click Here</a></p>
         </div>
-    </div>
+    </section>
     <style>
         .asteriskField {
             display: none;

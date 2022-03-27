@@ -43,10 +43,14 @@ INSTALLED_APPS = [
     'stolen_wordle.apps.StolenWordleConfig',
     'stolen_herdle.apps.StolenHerdleConfig',
     'accounts.apps.AccountsConfig',
+    'tailwind_theme.apps.TailwindThemeConfig',
 
     # 3rd party apps
     'crispy_forms',
-    'crispy_bootstrap5',
+    'crispy_tailwind',
+    # https://django-tailwind.readthedocs.io/en/latest/installation.html
+    'tailwind',
+    'django_browser_reload',
 
     # django apps
     'django.contrib.admin',
@@ -65,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware', #automatic reload for tailwind
 ]
 
 ROOT_URLCONF = 'homepage.urls'
@@ -148,11 +153,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/") if os.getenv(
     'ENV') == 'local' else '/home/dh_hnppbi/jacknaughton.com/public/media'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'bootstrap')
+    os.path.join(BASE_DIR, 'bootstrap'),
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # form styling
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
+TAILWIND_APP_NAME = 'tailwind_theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
