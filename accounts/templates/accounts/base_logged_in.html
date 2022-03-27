@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body_content %}
-    <header class="py-3 mb-3 border-bottom bg-dark text-light">
-        <div class="container-fluid">
-            {% include 'accounts/navbar_top.html' %}
-        </div>
-    </header>
-    <main class="container">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <nav class="flex fixed items-center justify-between flex-wrap bg-gray-800 p-3 fixed w-full z-10 top-0">
+        {% include 'accounts/navbar_top.html' %}
+    </nav>
+    <main id="main-body" class="container w-full flex flex-wrap mt-16">
         {% block base_main %}{% endblock %}
     </main>
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 {% endblock %}

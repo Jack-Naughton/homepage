@@ -1,18 +1,34 @@
-<div class="d-flex align-items-center justify-content-end">
-    {# Begin Account Dropdown #}
-    <div class="flex-shrink-0 dropdown">
-        <span href="#" class="d-block dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-            Account
-        </span>
-        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li>
-                <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="/accounts/logout">Sign out</a></li>
-        </ul>
-    </div>
-    {# End Account Dropdown #}
+<div class="flex items-center flex-shrink-0 text-white mr-6">
+    <a class="text-white no-underline hover:text-white hover:no-underline" href="#">
+        <a class="text-2xl pl-2" href="/accounts"><i class="fa-solid fa-house-user"></i></a>
+    </a>
 </div>
+
+<a id="nav-toggle" class="inline-block py-2 px-4 text-white no-underline" href="#">
+    {{ user.username }}
+</a>
+
+<div class="w-full flex-grow flex items-center hidden pt-6" id="nav-content">
+    <ul class="list-reset flex justify-end flex-1 items-center py-2">
+        <li class="mr-3">
+            <a class="inline-block text-gray-50 no-underline hover:text-gray-500 hover:text-underline px-4"
+               href="#">Account</a>
+        </li>
+        <li class="mr-3">
+            <a class="inline-block text-gray-50 no-underline hover:text-gray-500 hover:text-underline px-4"
+               href="/accounts/logout">Sign out</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    document.getElementById('nav-toggle').addEventListener("click", function () {
+        document.getElementById("nav-content").classList.toggle("hidden");
+    }, true);
+    //close the menu if anywhere else is clicked toggle the menu
+    document.body.addEventListener('click', function (e) {
+        if (e.target.id !== 'nav-toggle') {
+            document.getElementById("nav-content").classList.add("hidden");
+        }
+    }, true);
+</script>
