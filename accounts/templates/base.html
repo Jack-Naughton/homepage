@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{% static 'accounts/css/styles.css' %}" rel="stylesheet"/>
-   {% tailwind_css %}
-{#    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>#}
+    {% tailwind_css %}
     <title>{% block title %}My Account{% endblock %}</title>
 </head>
-<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+<body class="bg-gray-50 leading-normal tracking-normal">
 {% block body_content %}{% endblock %}
 </body>
 </html>
