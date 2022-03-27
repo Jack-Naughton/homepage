@@ -1,18 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body_content %}
-    <style>
-        body {
-            padding-top: 4.5rem; /* header offset */
-        }
-    </style>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <header class="py-3 mb-3 border-bottom bg-dark text-light">
         <div class="container-fluid">
             {% include 'accounts/navbar_top.html' %}
         </div>
-    </nav>
+    </header>
     <main class="container">
         {% block base_main %}{% endblock %}
     </main>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 {% endblock %}
