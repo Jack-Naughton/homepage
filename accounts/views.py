@@ -1,5 +1,3 @@
-import logging
-
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin
@@ -9,7 +7,7 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, CreateView, UpdateView
 
-from accounts.forms import SignupForm, MyAuthenticationForm
+from accounts.forms import SignupForm, MyAuthenticationForm, ProfileEditForm
 
 
 class SignupView(CreateView):
@@ -41,7 +39,7 @@ class ProfileView(DetailView):
 @method_decorator(login_required, name='dispatch')
 class ProfileEditView(UserPassesTestMixin, UpdateView):
     model = User
-    fields = ['username', 'email']
+    form_class = ProfileEditForm
     template_name = 'accounts/update.html'
     success_url = reverse_lazy('profile')
 
