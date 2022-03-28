@@ -7,7 +7,9 @@ from song_game.models import Playlist
 
 class MyPlaylistsView(ListView):
     template_name = 'my_playlists.html'
-    model = Playlist
+
+    def get_queryset(self):
+        return self.request.user.playlist_set.all()
 
 
 class PlaylistView(CreateView):
