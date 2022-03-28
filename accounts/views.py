@@ -1,5 +1,8 @@
+import logging
+
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LogoutView, LoginView
 from django.urls import reverse_lazy
@@ -36,11 +39,14 @@ class ProfileView(DetailView):
 
 
 @method_decorator(login_required, name='dispatch')
-class ProfileEditView(UpdateView):
+class ProfileEditView(UserPassesTestMixin, UpdateView):
     model = User
     fields = ['username', 'email']
     template_name = 'accounts/update.html'
     success_url = reverse_lazy('profile')
+
+    def test_func(self):
+        return self.request.user.id == self.kwargs['pk']
 
 
 class MyLoginView(LoginView):
