@@ -1,4 +1,6 @@
 {% extends 'accounts/base_logged_in.html' %}
 {% block base_main %}
-    <p>hi</p>
+    {% for playlist in playlist_list %}
+        {{ playlist.user }}
+    {% endfor %}
 {% endblock %}
