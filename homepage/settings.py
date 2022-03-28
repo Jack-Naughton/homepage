@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'stolen_herdle.apps.StolenHerdleConfig',
     'accounts.apps.AccountsConfig',
     'tailwind_theme.apps.TailwindThemeConfig',
+    'song_game.apps.SongGameConfig',
 
     # 3rd party apps
     'crispy_forms',

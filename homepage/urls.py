@@ -25,9 +25,11 @@ urlpatterns = [
     path('stolen_word_game/', include('stolen_wordle.urls')),
     path('stolen_song_game/', include('stolen_herdle.urls')),
     path('accounts/', include('accounts.urls')),
+    path('face_the_music/', include('song_game.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
 
     # django urls
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]
+
