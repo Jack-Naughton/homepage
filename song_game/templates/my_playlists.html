@@ -1,6 +1,15 @@
 {% extends 'accounts/base_logged_in.html' %}
 {% block base_main %}
-    {% for playlist in playlist_list %}
-        {{ playlist.user }}
-    {% endfor %}
+    <div class="grid grid-cols-1 md:grid-cols-4 justify-items-center md:justify-items-start">
+        {% for playlist in playlist_list %}
+            <div class="max-w-xs mx-10 my-10 rounded overflow-hidden shadow-lg">
+                <img class="w-full"
+                     src="https://media.istockphoto.com/photos/compact-disc-picture-id175539364?k=20&m=175539364&s=612x612&w=0&h=0uCTEMh_uHBwKNTbxuuBgngNrvGR6vL3nPfJFWfYzSs="
+                     alt="Mountain">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">{{ playlist.name }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
