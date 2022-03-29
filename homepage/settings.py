@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     # https://django-tailwind.readthedocs.io/en/latest/installation.html
     'tailwind',
     'django_browser_reload',
+    'django_crontab',
 
     # django apps
     'django.contrib.admin',
@@ -166,3 +167,10 @@ TAILWIND_APP_NAME = 'tailwind_theme'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# django-crontab
+CRONJOBS = [
+    ('0 1 * * *', 'evan_chess.cron.get_todays_answer')
+]
+# path to executable on dreamhost
+CRONTAB_EXECUTABLE = '/usr/local/bin/crontab'
