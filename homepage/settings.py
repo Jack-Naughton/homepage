@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'tailwind_theme.apps.TailwindThemeConfig',
     'song_game.apps.SongGameConfig',
+    'evan_chess.apps.EvanChessConfig',
 
     # 3rd party apps
     'crispy_forms',
