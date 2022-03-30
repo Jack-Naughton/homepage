@@ -232,7 +232,6 @@ function createSharePasta() {
         + tries
         + '/' + MAX_GUESSES + '\n\n'
         + createEmojiPattern('\n') + '\n'
-        + 'https://jackli.gg/chessle';
     let shareData = {
         text: pasta
     };
@@ -431,7 +430,7 @@ function openShareModal(text) {
         <p id="share-modal-stats" class="share-modal-answer"></p>
         <p class="share-modal-answer">
         <br />
-        Chessle resets at 12am PST every day!
+        Chessle resets whenever you reload the page!
         </p>
     `;
     $('#shareModalBody').html(modalBody);
@@ -440,31 +439,6 @@ function openShareModal(text) {
         logOutboundClick(chessableLink);
     });
     $('#shareModal').modal('show');
-}
-
-function addSponsorText() {
-    let sponsorHtml = `
-        Sponsored by 
-        <a href="https://www.chessable.com/?utm_source=chessle&utm_medium=partner" target="_blank">
-            <img src="img/chessable.png" alt="Chessable"
-                onclick="logOutboundClick('https://www.chessable.com/?utm_source=chessle&utm_medium=partner');">
-        </a>
-    `;
-    let curDate = new Date();
-    let promoStartDate = new Date(Date.UTC(2022, 2, 29, 23));
-    let promoEndDate = new Date(Date.UTC(2022, 3, 1, 23));
-    if (curDate > promoStartDate && curDate < promoEndDate) {
-        sponsorHtml = `
-            <a href="https://go.chessable.com/chessle-deals/?utm_source=chessle&utm_medium=partner&utm_campaign=72_hr_sale"
-                    target="_blank">
-                <img src="img/chessable_sale.jpg" alt="Chessable"
-                    onclick="logOutboundClick('https://go.chessable.com/chessle-deals/?utm_source=chessle&utm_medium=partner&utm_campaign=72_hr_sale');">
-            </a>
-        `;
-        $('#titleSponsor').removeClass('navbar-title-sponsor');
-        $('#titleSponsor').addClass('navbar-title-sponsor-sale');
-    }
-    $('#titleSponsor').html(sponsorHtml);
 }
 
 
@@ -631,7 +605,6 @@ function setUp() {
             setUpAnswer();
         }
     }
-    addSponsorText();
 }
 
 $(document).on("keydown", function (e) {
