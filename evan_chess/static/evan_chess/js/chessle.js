@@ -635,7 +635,7 @@ function setUp() {
         localStorage.setItem('prevGuesses', '[]');
         localStorage.setItem('prevResults', '[]');
         localStorage.setItem('isGameOver', false);
-        openInstructionsModal();
+        // openInstructionsModal();
     } else {
         prevGuesses = JSON.parse(localStorage.getItem('prevGuesses'));
         prevResults = JSON.parse(localStorage.getItem('prevResults'));
