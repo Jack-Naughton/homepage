@@ -72,11 +72,8 @@ const GUESS_BOX_SIZE_TO_FONT_SIZE = {
     }
 };
 
-let SERVER_URL_GET = 'https://d1vwq1uqg5c4bn.cloudfront.net/';
+let SERVER_URL_GET = '/evan_chess/answer/';
 let SERVER_URL = 'https://d2jwxtulzwxhxh.cloudfront.net/';
-if (location.hostname === '') {
-    SERVER_URL_GET = SERVER_URL = 'http://localhost:9334/';
-}
 
 let difficulty = 'e';
 let date;
@@ -153,7 +150,8 @@ function gameOver(isWin) {
     localStorage.setItem('isWin', isWin);
     updateLocalStorage();
 
-    sendResult(isWin);
+    // don't send to actual chessle
+    // sendResult(isWin);
 
     // Show endgame modal
     if (isWin) {
