@@ -374,33 +374,14 @@ function chooseMode(chosenDifficulty) {
 
 function setUpAnswer() {
     ans = fullAns.slice(0, getAnsLength());
+    console.log(ans);
     populateGuessBoxes();
     $('#instructionsModal').modal('hide');
 }
 
 function openInstructionsModal() {
-    $('#instructionsModalTitle').text('Welcome to Chessle');
-    let instructionsText = `
-        Guess the entire opening sequence, for both white and black!<br />
-        <div class="instructions-example">
-            <p class="instructions-example-title">Example</p>
-            <img class="instructions-example-img" src="img/example.png">
-            <br /><br />
-            <img class="instructions-colour" src="img/Nf3.png">
-            Green on Nf3 means that Nf3 was played on that specific move (White on move 2).
-            <br /><br />
-            <img class="instructions-colour" src="img/d4.png">
-            Yellow on d4 means that d4 was indeed played by <b>either white or black</b>,
-            but not at that specific spot (White on move 1).
-            <br /><br />
-            <img class="instructions-colour" src="img/d5.png">
-            Grey on d5 means that d5 was not played by either white or black.
-            <br /><br />
-            Treat the moves as exactly how the text shows. <b>Nxe5 is not the same as Ne5!</b>
-            <br /><br />
-            You have ${MAX_GUESSES} guesses. Good luck!
-        </div>
-    `;
+    $('#instructionsModalTitle').text('Hi Evan!');
+    let instructionsText = `You know the rules. You have ${MAX_GUESSES} guesses. Good luck!`;
     $('#instructionsModalBody').html(instructionsText);
     $('#instructionsModal').modal({
         backdrop: 'static',
@@ -635,7 +616,7 @@ function setUp() {
         localStorage.setItem('prevGuesses', '[]');
         localStorage.setItem('prevResults', '[]');
         localStorage.setItem('isGameOver', false);
-        // openInstructionsModal();
+        openInstructionsModal();
     } else {
         prevGuesses = JSON.parse(localStorage.getItem('prevGuesses'));
         prevResults = JSON.parse(localStorage.getItem('prevResults'));
