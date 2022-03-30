@@ -10,7 +10,7 @@ env
 project/venv
 project/staticfiles
 .env
-static
+static/*
 
 # Mac OS #
 .DS_Store
