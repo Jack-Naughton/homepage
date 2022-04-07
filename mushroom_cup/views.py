@@ -69,7 +69,7 @@ def _render_chart(request, file, x, y, title, labels, plot_color=None):
 def temperature(request):
     return _render_chart(
         request,
-        file='dashboard/data/temp.csv',
+        file='mushroom_cup/data/temp.csv',
         x='date',
         y='temp',
         title='Temperature',
@@ -81,7 +81,7 @@ def temperature(request):
 def co2(request):
     return _render_chart(
         request,
-        file='dashboard/data/co2.csv',
+        file='mushroom_cup/data/co2.csv',
         x='date',
         y='co2',
         title='CO2',
@@ -92,12 +92,10 @@ def co2(request):
 def humidity(request):
     return _render_chart(
         request,
-        file='dashboard/data/humidity.csv',
+        file='mushroom_cup/data/humidity.csv',
         x='date',
         y='humidity',
         title='Humidity',
         labels={'date': 'Date', 'humidity': '% Humidity'},
         plot_color='green',
     )
-
-    return render(request, "dashboard/index.html", context={'chart': chart})
