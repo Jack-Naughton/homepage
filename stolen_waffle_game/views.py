@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 # Create your views here.
 def index(request):
-    return render(request, 'stolen_wordle/index.html', {})
+    return render(request, 'stolen_waffle_game/index.html', {})

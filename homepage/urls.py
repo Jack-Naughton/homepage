@@ -27,6 +27,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('face_the_music/', include('song_game.urls')),
     path('evan_chess/', include('evan_chess.urls')),
+    path('evan_chess/', include('stolen_waffle_game.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
 
     # django urls
