@@ -2,6 +2,15 @@
 // stats won't be affected, and total victory tracking is probably whacky. oh well
 window.localStorage.removeItem('waffle-state');
 
+// get the new puzzle
+var xmlHttp = new XMLHttpRequest();
+xmlHttp.open("GET", 'puzzle', false); // false for synchronous request
+xmlHttp.send(null);
+window.waffle = JSON.parse(xmlHttp.responseText);
+
+
+
+
 
 function t(t) {
     return t && t.__esModule ? t.default : t
