@@ -1,3 +1,8 @@
+// nuke game state on load
+// stats won't be affected, and total victory tracking is probably whacky. oh well
+window.localStorage.removeItem('waffle-state');
+
+
 function t(t) {
     return t && t.__esModule ? t.default : t
 }
@@ -1189,7 +1194,7 @@ var y = new class {
         this.load()
     }
     load() {
-        const t = JSON.parse(localStorage.getItem("state"));
+        const t = JSON.parse(localStorage.getItem("waffle-state"));
         t && (this.solution = t.solution,
         this.puzzle = t.puzzle,
         this.swapsRemaining = t.swapsRemaining,
@@ -1201,7 +1206,7 @@ var y = new class {
         const t = JSON.parse(JSON.stringify(this));
         delete t.eventHandlers,
         delete t.tiles,
-        localStorage.setItem("state", JSON.stringify(t))
+        localStorage.setItem("waffle-state", JSON.stringify(t))
     }
     on(t, e) {
         this.eventHandlers[t] = this.eventHandlers[t] || [],
@@ -1278,7 +1283,7 @@ var v, b, w, x, _, S = new class {
         this.load()
     }
     load() {
-        const t = JSON.parse(localStorage.getItem("settings"));
+        const t = JSON.parse(localStorage.getItem("waffle-settings"));
         t && (this.highcontrast = t.highcontrast || this.highcontrast,
         this.darkmode = t.darkmode || this.darkmode,
         this.emit("SETTINGS_CHANGED"))
@@ -1286,7 +1291,7 @@ var v, b, w, x, _, S = new class {
     save() {
         const t = JSON.parse(JSON.stringify(this));
         delete t.eventHandlers,
-        localStorage.setItem("settings", JSON.stringify(t))
+        localStorage.setItem("waffle-settings", JSON.stringify(t))
     }
     setHighcontrast(t) {
         this.highcontrast = t,
@@ -1883,7 +1888,7 @@ var st = new class {
         this.load()
     }
     async load() {
-        const t = JSON.parse(localStorage.getItem("stats"));
+        const t = JSON.parse(localStorage.getItem("waffle-stats"));
         t && (this.results = t.results || [],
         this.uuid = t.uuid || O()),
         await ot(this.getPuzzleResults(), this.getUUID())
@@ -1891,7 +1896,7 @@ var st = new class {
     save() {
         const t = JSON.parse(JSON.stringify(this));
         delete t.eventHandlers,
-        localStorage.setItem("stats", JSON.stringify(t))
+        localStorage.setItem("waffle-stats", JSON.stringify(t))
     }
     setPuzzleResults(t) {
         this.results = [...t],
@@ -2173,7 +2178,7 @@ Ct.note) {
 const Et = Math.ceil(Math.sqrt(y.getSolution().length));
 t(e)("body").toggleClass("deluxe", 7 === Et),
 t(e)(".game-number").text("#" + String(y.getGameNumber())),
-0 === st.getGamesPlayed() && setTimeout((()=>bt("help")), 1500);
+0 === st.getGamesPlayed();
 let {puzzle: At, tiles: zt} = y;
 At = [...y.puzzle],
 zt = y.tiles,
