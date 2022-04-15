@@ -6,9 +6,13 @@ window.waffle = null;
 // get the new puzzle
 function getWaffle() {
     var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            window.waffle = JSON.parse(xmlHttp.responseText);
+        }
+    };
     xmlHttp.open("GET", 'puzzle', false); // false for synchronous request
-    xmlHttp.send(null);
-    window.waffle = JSON.parse(xmlHttp.responseText);
+    xmlHttp.send();
 }
 
 getWaffle()
