@@ -1,6 +1,7 @@
 // nuke game state on load
 // stats won't be affected, and total victory tracking is probably whacky. oh well
 window.localStorage.removeItem('waffle-state');
+window.waffle = null;
 
 // get the new puzzle
 function getWaffle() {
