@@ -3,13 +3,14 @@
 window.localStorage.removeItem('waffle-state');
 
 // get the new puzzle
-var xmlHttp = new XMLHttpRequest();
-xmlHttp.open("GET", 'puzzle', false); // false for synchronous request
-xmlHttp.send(null);
-window.waffle = JSON.parse(xmlHttp.responseText);
+function getWaffle() {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", 'puzzle', false); // false for synchronous request
+    xmlHttp.send(null);
+    window.waffle = JSON.parse(xmlHttp.responseText);
+}
 
-
-
+getWaffle()
 
 
 function t(t) {
