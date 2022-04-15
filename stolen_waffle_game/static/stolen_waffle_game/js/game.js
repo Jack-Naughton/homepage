@@ -11,7 +11,7 @@ function getWaffle() {
             WAFFLE = JSON.parse(xmlHttp.responseText);
         }
     };
-    xmlHttp.open("GET", 'puzzle', false); // false for synchronous request
+    xmlHttp.open("GET", 'puzzle/', false); // false for synchronous request
     xmlHttp.send();
 }
 
