@@ -15,7 +15,7 @@
     <title>Waffle</title>
     <meta name="description" content="A game inspired by Wordle in the shape of a waffle.">
     <link href="{% static 'stolen_waffle_game/css/style.css' %}" rel="stylesheet">
-    <script src="{% static 'stolen_waffle_game/js/puzzle.js' %}" type="module"></script>
+    <script src="{% static 'stolen_waffle_game/js/puzzle.js' %}?{% now 'H_i_s' %}" type="module"></script>
 </head>
 <body class="" style="overflow: hidden;">
 <header>
