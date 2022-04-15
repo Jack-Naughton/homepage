@@ -171,7 +171,9 @@ INTERNAL_IPS = [
 
 # django-crontab
 CRONJOBS = [
-    ('0 1 * * *', 'evan_chess.cron.get_todays_answer')
+    ('0 1 * * *', 'evan_chess.cron.get_todays_answer'),
+    ('0 1 * * *', 'stolen_waffle_game.cron.get_todays_answer'),
+
 ]
 # path to executable on dreamhost
 CRONTAB_EXECUTABLE = '/usr/local/bin/crontab'
