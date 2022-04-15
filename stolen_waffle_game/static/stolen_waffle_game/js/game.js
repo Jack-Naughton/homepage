@@ -1,14 +1,14 @@
 // nuke game state on load
 // stats won't be affected, and total victory tracking is probably whacky. oh well
 window.localStorage.removeItem('waffle-state');
-window.waffle = null;
+let WAFFLE = null;
 
 // get the new puzzle
 function getWaffle() {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            window.waffle = JSON.parse(xmlHttp.responseText);
+            WAFFLE = JSON.parse(xmlHttp.responseText);
         }
     };
     xmlHttp.open("GET", 'puzzle', false); // false for synchronous request
@@ -2312,13 +2312,13 @@ let Ct;
 S.on("SETTINGS_CHANGED", Tt),
     Tt();
 try {
-    Ct = "string" == typeof window.waffle ? JSON.parse(function (t) {
+    Ct = "string" == typeof WAFFLE ? JSON.parse(function (t) {
         const e = atob(t)
             , n = new Uint8Array(e.length);
         for (let t = 0; t < n.length; t++)
             n[t] = e.charCodeAt(t);
         return String.fromCharCode(...new Uint16Array(n.buffer))
-    }(window.waffle)) : window.waffle
+    }(WAFFLE)) : WAFFLE
 } catch (n) {
     t(e)("main").hide(),
         t(e)(".error").show()
