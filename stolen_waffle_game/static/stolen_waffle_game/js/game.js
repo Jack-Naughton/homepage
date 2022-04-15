@@ -11,7 +11,8 @@ function getWaffle() {
             WAFFLE = JSON.parse(xmlHttp.responseText);
         }
     };
-    xmlHttp.open("GET", 'puzzle/', false); // false for synchronous request
+     // false for synchronous request. also append time to bust cache
+    xmlHttp.open("GET", 'puzzle/?_=' + new Date().getTime(), false);
     xmlHttp.send();
 }
 
