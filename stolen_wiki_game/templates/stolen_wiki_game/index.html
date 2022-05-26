@@ -11,19 +11,13 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Try to find the title of a random Wikipedia article by guessing words to reveal them on the page. New puzzle daily!"/>
-    <meta property="og:title" content="Redactle - A daily puzzle game"/>
+    <meta property="og:title" content="Rejacktle"/>
     <meta property="og:description" content="Try to find the title of a random Wikipedia article."/>
-    <meta property="og:url" content="https://www.redactle.com/"/>
-    <meta property="og:image" content="https://www.redactle.com/card.png"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Redactle - A daily web browser puzzle game"/>
-    <meta name="twitter:description" content="Try to find the title of a random Wikipedia article by guessing words to reveal them on the page. New puzzle daily!"/>
-    <meta name="twitter:image" content="https://www.redactle.com/twitterCard.png"/>
-    <title>Redactle - A daily puzzle game</title>
+    <title>Rejacktle</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <span class="navbar-brand mb-0 h1 mx-4">Redactle</span>
+        <span class="navbar-brand mb-0 h1 mx-4">Rejacktle</span>
         <button class="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,9 +31,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-2" href="#" id="settingsBtn">Settings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-2" href="https://www.patreon.com/jhntrnr" target="_blank">Patreon</a>
                 </li>
             </ul>
         </div>
@@ -71,36 +62,12 @@
         <div class="modal-dialog">
         <div class="modal-content text-dark">
             <div class="modal-header">
-            <h5 class="modal-title" id="infoModalLabel">Welcome to Redactle!</h5>
+            <h5 class="modal-title" id="infoModalLabel">Welcome to Rejacktle!</h5>
             <button type="button" class="btn-close closeInfo" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Redactle is a daily browser game where the user tries to determine the subject of a random obfuscated Wikipedia article, chosen from <a href='https://en.wikipedia.org/wiki/Wikipedia:Vital_articles/Level/4' target="_blank">Wikipedia's 10,000 Vital Articles (Level 4).</a></p>
-                <p>A new puzzle will be available every day at 11:00 AM CDT (16:00 UTC).</p>
-                <p>Follow Redactle on Twitter <a href = "https://www.twitter.com/RedactleGame" target="_blank">@RedactleGame</a>.</p>
-                <p>Created by <a href="https://www.twitter.com/jhntrnr" target="_blank">John Turner</a></p>
-                <p id="yesterday"></p>
-                <h5>How to Play</h5>
-                <ul>
-                    <li>Type a word into the input box and press Enter or the Guess button.</li>
-                    <li>All occurrences of that word will become unredacted in the article body.</li>
-                    <li>To win, figure out the title or subject of the article.</li>
-                </ul>
-                <h5>Tips and Quirks</h5>
-                <ul>
-                    <li>Each guess must be one word only (Guessing multiple words at a time will not work).</li>
-                    <li><i>Most</i> Punctuation is automatically revealed in the article page. Some punctuation occasionally escapes Redactle's filter and becomes redacted.</li>
-                    <li>Guesses are case <i>insensitive</i>, and letters with diacritics (é, ü, etc) are considered to not have those diacritics.</li>
-                    <li>Shift+Enter will attempt to automatically pluralize or singularize your guess. There are certain edge cases (e.g. guessing a nonsense word like "asdf") where this will submit nonsense guesses.</li>
-                    <li>You will likely encounter some formatting and punctuation quirks. These are a result of stripping away certain characters and elements present in the original Wikipedia article that don't play nicely with Redactle.</li>
-                    <li>Many common words are automatically revealed for your convenience. The list includes most English prepositions and articles. Guessing these words does not count toward your score.</li>
-                    <li>Check the Settings menu for configuration options.</li>
-                </ul>
-                <h5>Does Redactle collect any user data?</h5>
-                    <p>In order to provide global performance stats, Redactle makes note of a user's performance on a given puzzle. The data collected is limited to the user's score and accuracy, and is anonymized.</p>
-                    <p>Redactle does not collect any information regarding a user's actual guesses.</p>
-                    <p>For more information, view Redactle's <a href="privacy.html">Privacy Policy.</a></p>
-                <p class="text-secondary">Version 1.0</p>
+                <img src="{% static "stolen_wiki_game/img/zuko.jpeg" %}">
+                <p>Don't know the rules? <a href="https://www.redactle.com/">Redactle</a></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary closeInfo" data-bs-dismiss="modal">Close</button>

@@ -238,11 +238,6 @@ async function fetchData(retry, artStr) {
                     ShowZero();
                 }
 
-
-                if (redactleIndex > 0) {
-                    document.getElementById("yesterday").innerHTML = `The answer to yesterday's Redactle was: ${atob(yesterday).replace(/ *\([^)]*\) */g, "").normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/_/g, " ").toLowerCase()}`;
-                }
-
                 wikiHolder.style.display = "flex";
             }
         })
@@ -403,14 +398,14 @@ function WinRound(populate) {
         }
     }
 
-    document.getElementById("winText").innerHTML = `<h3>Congratualtions, you solved Redactle!</h3><ul><li>The answer was: ${ansStr}</li><li>You solved it in ${gameScores[redactleIndex]} guesses</li><li>Your accuracy was ${currentAccuracy}%</li><li>You have solved ${streakCount} consecutive Redactles</li></ul><p><a href="javascript:ShareResults();">Share your results</a></p>`;
+    document.getElementById("winText").innerHTML = `<h3>Congratualtions, you solved Rejacktle!</h3><ul><li>The answer was: ${ansStr}</li><li>You solved it in ${gameScores[redactleIndex]} guesses</li><li>Your accuracy was ${currentAccuracy}%</li><li>You have solved ${streakCount} consecutive Rejacktles</li></ul><p><a href="javascript:ShareResults();">Share your results</a></p>`;
     document.getElementById("winText").style.display = 'block';
 
     SaveProgress(true);
 }
 
 function ShareResults() {
-    const shareText = "I solved today's Redactle (#" + (redactleIndex + 1) + ") in " + gameScores[redactleIndex] + " guesses with an accuracy of " + currentAccuracy + "%. Played at https://www.redactle.com/";
+    const shareText = "I solved today's Rejacktle (#" + (redactleIndex + 1) + ") in " + gameScores[redactleIndex] + " guesses with an accuracy of " + currentAccuracy + "%. Played at " + location;
     const copied = ClipboardJS.copy(shareText);
     if (copied) {
         alert("Results copied to clipboard. Thanks for playing!");
