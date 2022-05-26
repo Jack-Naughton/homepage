@@ -58,7 +58,7 @@ function LoadSave(){
     playerID = save.id.playerID;
     $.ajax({
         type: "GET",
-        url: "/ses.php",
+        url: "article",
         dataType:'text',
         success: function(data){
             startMetrics = JSON.parse(data);
