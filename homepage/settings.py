@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'song_game.apps.SongGameConfig',
     'evan_chess.apps.EvanChessConfig',
     'stolen_waffle_game.apps.StolenWaffleGameConfig',
+    'stolen_wiki_game.apps.StolenWikiGameConfig',
 
     # 3rd party apps
     'crispy_forms',
