@@ -152,10 +152,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static/") if os.getenv(
-    'ENV') == 'local' else '/home/dh_hnppbi/jacknaughton.com/public/static'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/") if os.getenv(
-    'ENV') == 'local' else '/home/dh_hnppbi/jacknaughton.com/public/media'
+STATIC_ROOT = os.path.join(BASE_DIR, os.getenv('STATIC_ROOT_PATH'))
+MEDIA_ROOT = os.path.join(BASE_DIR, os.getenv('STATIC_MEDIA_PATH'))
 
 STATICFILES_DIRS = []
 
