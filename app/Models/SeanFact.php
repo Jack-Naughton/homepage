@@ -10,4 +10,6 @@ class SeanFact extends Model
     use HasFactory;
 
     protected $table = 'coworker_statements';
+    protected $fillable = ['statement'];
+    public $timestamps = false;
 }
