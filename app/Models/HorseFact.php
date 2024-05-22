@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property $statement
+ * @property $fact
  */
-class SeanFact extends Model
+class HorseFact extends Model
 {
     use HasFactory;
 
-    protected $table = 'coworker_statements';
-    protected $fillable = ['statement'];
+    protected $table = 'horsefacts';
+    protected $fillable = ['fact'];
     public $timestamps = false;
 }
