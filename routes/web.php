@@ -19,8 +19,9 @@ Route::get('horsefacts/random', static function () {
 
 Route::get('agendabot', static function (Request $request) {
     $meeting = $request->get('text');
+    $text = $meeting ? 'What is the agenda for `' . $meeting . '`?' : 'What is the agenda for this meeting?';
     return new \Illuminate\Http\JsonResponse([
         'response_type' => 'in_channel',
-        'text' => 'What is the agenda for ' . $meeting ? '`' . $meeting . '`' : 'this meeting?'
+        'text' => $text,
     ]);
 });
