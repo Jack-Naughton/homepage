@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,4 +15,12 @@ Route::get('coworker_statements/random', static function () {
 Route::get('horsefacts/random', static function () {
     $fact = \Illuminate\Support\Facades\DB::table('horsefacts')->inRandomOrder()->first();
     return new \Illuminate\Http\JsonResponse(['response_type' => 'in_channel', 'text' => $fact->fact]);
+});
+
+Route::post('agendabot', static function (Request $request) {
+    $meeting = $request->get('text');
+    return new \Illuminate\Http\JsonResponse([
+        'response_type' => 'in_channel',
+        'text' => 'What is the agenda for ' . $meeting ? '`' . $meeting . '`' : 'this meeting?'
+    ]);
 });
