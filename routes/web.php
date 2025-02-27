@@ -17,7 +17,7 @@ Route::get('horsefacts/random', static function () {
     return new \Illuminate\Http\JsonResponse(['response_type' => 'in_channel', 'text' => $fact->fact]);
 });
 
-Route::get('agendabot', static function (Request $request) {
+Route::post('agendabot', static function (Request $request) {
     $meeting = $request->get('text');
     $text = $meeting ? 'What is the agenda for `' . $meeting . '`?' : 'What is the agenda for this meeting?';
     return new \Illuminate\Http\JsonResponse([
