@@ -71,10 +71,12 @@
             <h2 class="mb-5">Experience</h2>
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
-                    <h3 class="mb-0">Senior Software Engineer</h3>
+                    <h3 class="mb-0">Staff Software Engineer</h3>
                     <div class="subheading mb-3">Mailchimp</div>
-                    <p>Led team on refactoring legacy codebase to a new data model to meet growing product needs</p>
-                    <p>Increased legacy code test coverage to meet company standard</p>
+                    <p>Led a platform team to overhaul a 25 year old data model and codebase from a single to multi-channel marketing.</p>
+                    <p>Introduced and owned data models which governed hundreds of billions of records.</p>
+                    <p>Created runbooks for tasks ranging from lift-and-shift data model replacements to common oncall troubleshooting.</p>
+                    <p>Led and educated tech spec creations to clarify work requirements and streamline development processes.</p>
                 </div>
                 <div class="flex-shrink-0"><span class="text-primary">February 2023 - Present</span></div>
             </div>
