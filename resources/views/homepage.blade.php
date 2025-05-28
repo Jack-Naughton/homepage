@@ -73,10 +73,11 @@
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Staff Software Engineer</h3>
                     <div class="subheading mb-3">Mailchimp</div>
-                    <p>Led a platform team to overhaul a 25 year old data model and codebase from a single to multi-channel marketing.</p>
-                    <p>Introduced and owned data models which governed hundreds of billions of records.</p>
-                    <p>Created runbooks for tasks ranging from lift-and-shift data model replacements to common oncall troubleshooting.</p>
-                    <p>Led and educated tech spec creations to clarify work requirements and streamline development processes.</p>
+                    <p>Led platform team to overhaul a 25 year old data model and codebase from a single to multi-channel marketing.</p>
+                    <p>Introduced and owned data models which governed hundreds of billions of records for a user base of over 50 million.</p>
+                    <p>Built integrations across cloud infrastructures including AWS and GCP to modernize outdated monolithic systems, using technologies such as Kafka and GraphQL.</p>
+                    <p>Led and educated tech spec creations to clarify work requirements and streamline development processes using modern AI tooling such as Cursor, Copilot, and in-house models.</p>
+                    <p>Created repeatable steps for tasks ranging from lift-and-shift data model replacements to common on-call troubleshooting.</p>
                 </div>
                 <div class="flex-shrink-0"><span class="text-primary">February 2023 - Present</span></div>
             </div>
